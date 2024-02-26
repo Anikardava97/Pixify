@@ -18,6 +18,7 @@
 		EE92ECBE2B8D0E0F00FA05C7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECBD2B8D0E0F00FA05C7 /* CustomTextField.swift */; };
 		EE92ECC02B8D0E6700FA05C7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECBF2B8D0E6700FA05C7 /* RegistrationViewController.swift */; };
 		EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */; };
+		EE92ECC52B8D29B200FA05C7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECC42B8D29B200FA05C7 /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,9 @@
 		EE92ECB32B8CFA8800FA05C7 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		EE92ECB92B8D050900FA05C7 /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonComponent.swift; sourceTree = "<group>"; };
 		EE92ECBD2B8D0E0F00FA05C7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		EE92ECBF2B8D0E6700FA05C7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = ../RegistrationViewController.swift; sourceTree = "<group>"; };
+		EE92ECBF2B8D0E6700FA05C7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
+		EE92ECC42B8D29B200FA05C7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				EE92ECAD2B8CF31A00FA05C7 /* Onboarding */,
+				EE92ECBF2B8D0E6700FA05C7 /* RegistrationViewController.swift */,
+				EE92ECC42B8D29B200FA05C7 /* RegistrationViewModel.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -89,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				EE92ECA62B8CF22100FA05C7 /* OnboardingViewController.swift */,
-				EE92ECBF2B8D0E6700FA05C7 /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				EE92ECC02B8D0E6700FA05C7 /* RegistrationViewController.swift in Sources */,
 				EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */,
 				EE92ECB42B8CFA8900FA05C7 /* Image+Extension.swift in Sources */,
+				EE92ECC52B8D29B200FA05C7 /* RegistrationViewModel.swift in Sources */,
 				EE92EC932B8CEFEC00FA05C7 /* AppDelegate.swift in Sources */,
 				EE92EC952B8CEFEC00FA05C7 /* SceneDelegate.swift in Sources */,
 				EE92ECA72B8CF22100FA05C7 /* OnboardingViewController.swift in Sources */,

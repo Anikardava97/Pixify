@@ -18,6 +18,14 @@ final class CustomTextField: UITextField {
         return imageView
     }()
     
+    private let errorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .red
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.isHidden = true
+        return label
+    }()
+    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,7 +58,27 @@ final class CustomTextField: UITextField {
             iconImageView.widthAnchor.constraint(equalToConstant: 24),
             iconImageView.heightAnchor.constraint(equalToConstant: 24)
         ])
+        
+        addSubview(errorLabel)
+         errorLabel.translatesAutoresizingMaskIntoConstraints = false
+         NSLayoutConstraint.activate([
+             errorLabel.topAnchor.constraint(equalTo: bottomAnchor, constant: 4),
+             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+         ])
+        
         tintColor = .customSecondaryColor
+    }
+    
+    // MARK: - Set Error State
+    func setErrorState(_ isError: Bool, withMessage message: String? = nil) {
+        layer.borderColor = isError ? UIColor.red.cgColor : UIColor.customSecondaryColor.cgColor
+        if let message = message, isError {
+            errorLabel.text = message
+            errorLabel.isHidden = false
+        } else {
+            errorLabel.isHidden = true
+        }
     }
     
     // MARK: - Configure
