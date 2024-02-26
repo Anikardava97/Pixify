@@ -9,6 +9,16 @@ import Foundation
 
 final class RegistrationViewModel {
     // MARK: - Methods
+    func registerUser(email: String, password: String, age: String, completion: @escaping (Bool, String) -> Void) {
+        UserRegistrationManager.shared.registerUser(email: email, password: password, age: age) { success, error in
+            if success {
+                completion(true, "User successfully registered.")
+            } else {
+                completion(false, error ?? "An error occurred during registration.")
+            }
+        }
+    }
+    
     func validateFields(email: String?, password: String?, age: String?) -> [String: String] {
         var errors: [String: String] = [:]
         

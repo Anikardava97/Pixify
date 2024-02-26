@@ -20,6 +20,9 @@
 		EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */; };
 		EE92ECC52B8D29B200FA05C7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECC42B8D29B200FA05C7 /* RegistrationViewModel.swift */; };
 		EE92ECC92B8D42C600FA05C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECC82B8D42C600FA05C7 /* LoginViewController.swift */; };
+		EE92ECCE2B8D475400FA05C7 /* UserRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */; };
+		EE92ECD02B8D485600FA05C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECCF2B8D485600FA05C7 /* HomeViewController.swift */; };
+		EE92ECD32B8D4D1200FA05C7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD22B8D4D1200FA05C7 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
 		EE92ECC42B8D29B200FA05C7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		EE92ECC82B8D42C600FA05C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationManager.swift; sourceTree = "<group>"; };
+		EE92ECCF2B8D485600FA05C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EE92ECD22B8D4D1200FA05C7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				EE92ECAE2B8CF32600FA05C7 /* App */,
+				EE92ECD12B8D4A3000FA05C7 /* Managers */,
 				EE92ECAC2B8CF30E00FA05C7 /* Scenes */,
 				EE92ECBC2B8D092200FA05C7 /* SharedComponents */,
 				EE92ECBB2B8D091800FA05C7 /* Extensions */,
@@ -86,6 +93,7 @@
 				EE92ECAD2B8CF31A00FA05C7 /* Onboarding */,
 				EE92ECCA2B8D42CA00FA05C7 /* Login */,
 				EE92ECC62B8D429F00FA05C7 /* Register */,
+				EE92ECCF2B8D485600FA05C7 /* HomeViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -148,8 +156,17 @@
 			isa = PBXGroup;
 			children = (
 				EE92ECC82B8D42C600FA05C7 /* LoginViewController.swift */,
+				EE92ECD22B8D4D1200FA05C7 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		EE92ECD12B8D4A3000FA05C7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,10 +245,13 @@
 				EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */,
 				EE92ECB42B8CFA8900FA05C7 /* Image+Extension.swift in Sources */,
 				EE92ECC52B8D29B200FA05C7 /* RegistrationViewModel.swift in Sources */,
+				EE92ECD32B8D4D1200FA05C7 /* LoginViewModel.swift in Sources */,
 				EE92EC932B8CEFEC00FA05C7 /* AppDelegate.swift in Sources */,
 				EE92EC952B8CEFEC00FA05C7 /* SceneDelegate.swift in Sources */,
 				EE92ECA72B8CF22100FA05C7 /* OnboardingViewController.swift in Sources */,
+				EE92ECCE2B8D475400FA05C7 /* UserRegistrationManager.swift in Sources */,
 				EE92ECB22B8CFA2900FA05C7 /* Color+Extension.swift in Sources */,
+				EE92ECD02B8D485600FA05C7 /* HomeViewController.swift in Sources */,
 				EE92ECC92B8D42C600FA05C7 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
