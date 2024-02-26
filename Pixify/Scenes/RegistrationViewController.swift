@@ -9,6 +9,7 @@ import UIKit
 
 final class RegistrationViewController: UIViewController {
     // MARK: - Methods
+    private let viewModel = RegistrationViewModel()
     private let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
     private let backgroundImageView: UIImageView = {
@@ -39,7 +40,7 @@ final class RegistrationViewController: UIViewController {
     private lazy var textFieldsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, ageTextField])
         stackView.axis = .vertical
-        stackView.spacing = 24
+        stackView.spacing = 28
         return stackView
     }()
     
@@ -88,6 +89,7 @@ final class RegistrationViewController: UIViewController {
     
     private lazy var SignUpButton: MainButtonComponent = {
         let button = MainButtonComponent(text: "Sign Up")
+        button.addTarget(self, action: #selector(signUpButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -144,9 +146,38 @@ final class RegistrationViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
+    private func validateInputFields() -> Bool {
+        let errors = viewModel.validateFields(email: emailTextField.text, password: passwordTextField.text, age: ageTextField.text)
+        
+        (emailTextField as? CustomTextField)?.setErrorState(false)
+        (passwordTextField as? CustomTextField)?.setErrorState(false)
+        (ageTextField as? CustomTextField)?.setErrorState(false)
+        
+        if let emailError = errors["email"] {
+            (emailTextField as? CustomTextField)?.setErrorState(true, withMessage: emailError)
+        }
+        
+        if let passwordError = errors["password"] {
+            (passwordTextField as? CustomTextField)?.setErrorState(true, withMessage: passwordError)
+        }
+        
+        if let ageError = errors["age"] {
+            (ageTextField as? CustomTextField)?.setErrorState(true, withMessage: ageError)
+        }
+        return errors.isEmpty
+    }
+    
     //MARK: - Actions
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc private func signUpButtonDidTap() {
+        if validateInputFields() {
+            print("Validation successful. Proceeding with sign up...")
+        } else {
+            print("Validation failed. Please correct the errors and try again.")
+        }
     }
 }
 
