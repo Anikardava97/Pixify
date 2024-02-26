@@ -136,7 +136,7 @@ final class RegistrationViewController: UIViewController {
             
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
             passwordTextField.heightAnchor.constraint(equalToConstant: 44),
-            ageTextField.heightAnchor.constraint(equalToConstant: 44),
+            ageTextField.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
     
