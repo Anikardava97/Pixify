@@ -9,6 +9,8 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     // MARK: - Methods
+    private let viewModel = LoginViewModel()
+    
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView(image: .authenticationBackground)
         imageView.contentMode = .scaleAspectFill
@@ -126,13 +128,56 @@ final class LoginViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
+    private func validateInputFields() -> Bool {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            return false
+        }
+        
+        let errors = viewModel.validateFields(email: email, password: password)
+        
+        (emailTextField as? CustomTextField)?.setErrorState(false)
+        (passwordTextField as? CustomTextField)?.setErrorState(false)
+        
+        var isValid = true
+        
+        if let emailError = errors["email"] {
+            (emailTextField as? CustomTextField)?.setErrorState(true, withMessage: emailError)
+            isValid = false
+        }
+        
+        if let passwordError = errors["password"] {
+            (passwordTextField as? CustomTextField)?.setErrorState(true, withMessage: passwordError)
+            isValid = false
+        }
+        return isValid
+    }
+    
+    private func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Login Failed", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+    
     //MARK: - Actions
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
     
     @objc private func loginButtonDidTap() {
-       
+        guard validateInputFields() else { return }
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+        viewModel.loginUser(email: email, password: password) { [weak self] success, message in
+            DispatchQueue.main.async {
+                if success {
+                    let homeViewController = HomeViewController()
+                    self?.navigationController?.pushViewController(homeViewController, animated: true)
+                } else {
+                    self?.showAlert(message: message)
+                }
+            }
+        }
     }
 }
 

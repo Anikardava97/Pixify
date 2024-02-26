@@ -167,16 +167,34 @@ final class RegistrationViewController: UIViewController {
         return errors.isEmpty
     }
     
+    private func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true)
+    }
+    
     //MARK: - Actions
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
     
     @objc private func signUpButtonDidTap() {
-        if validateInputFields() {
-            print("Validation successful. Proceeding with sign up...")
-        } else {
-            print("Validation failed. Please correct the errors and try again.")
+        guard validateInputFields() else { return }
+        viewModel.registerUser(email: emailTextField.text ?? "",
+                               password: passwordTextField.text ?? "",
+                               age: ageTextField.text ?? ""
+        ) { [weak self] success, message in
+            DispatchQueue.main.async {
+                if success {
+                    let homeViewController = HomeViewController()
+                    self?.navigationController?.pushViewController(homeViewController, animated: true)
+                } else if message == "Email already exists" {
+                    self?.showAlert(title: "Registration Failed", message: "The email address is already in use. Please try another email.")
+                } else {
+                    self?.showAlert(title: "Registration Failed", message: message )
+                }
+            }
         }
     }
 }
@@ -237,8 +255,4 @@ extension RegistrationViewController: UIPickerViewDelegate {
         
         ageTextField.text = "\(day)/\(month)/\(year)"
     }
-}
-
-#Preview {
-    RegistrationViewController()
 }
