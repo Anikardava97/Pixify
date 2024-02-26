@@ -9,4 +9,5 @@ import UIKit
 
 extension UIImage {
     static let onBoardingBackground = UIImage(named: "bg")
+    static let authenticationBackground = UIImage(named: "authenticationBG")
 }

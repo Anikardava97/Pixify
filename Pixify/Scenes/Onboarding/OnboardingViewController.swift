@@ -99,7 +99,3 @@ final class OnboardingViewController: UIViewController {
         }, completion: nil)
     }
 }
-
-#Preview {
-    OnboardingViewController()
-}

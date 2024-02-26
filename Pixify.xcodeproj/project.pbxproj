@@ -15,6 +15,9 @@
 		EE92ECB22B8CFA2900FA05C7 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECB12B8CFA2900FA05C7 /* Color+Extension.swift */; };
 		EE92ECB42B8CFA8900FA05C7 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECB32B8CFA8800FA05C7 /* Image+Extension.swift */; };
 		EE92ECBA2B8D050900FA05C7 /* MainButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECB92B8D050900FA05C7 /* MainButtonComponent.swift */; };
+		EE92ECBE2B8D0E0F00FA05C7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECBD2B8D0E0F00FA05C7 /* CustomTextField.swift */; };
+		EE92ECC02B8D0E6700FA05C7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECBF2B8D0E6700FA05C7 /* RegistrationViewController.swift */; };
+		EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +30,10 @@
 		EE92ECA62B8CF22100FA05C7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		EE92ECB12B8CFA2900FA05C7 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		EE92ECB32B8CFA8800FA05C7 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
-		EE92ECB92B8D050900FA05C7 /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainButtonComponent.swift; path = App/MainButtonComponent.swift; sourceTree = "<group>"; };
+		EE92ECB92B8D050900FA05C7 /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonComponent.swift; sourceTree = "<group>"; };
+		EE92ECBD2B8D0E0F00FA05C7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		EE92ECBF2B8D0E6700FA05C7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = ../RegistrationViewController.swift; sourceTree = "<group>"; };
+		EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +68,8 @@
 			children = (
 				EE92ECAE2B8CF32600FA05C7 /* App */,
 				EE92ECAC2B8CF30E00FA05C7 /* Scenes */,
-				EE92ECB12B8CFA2900FA05C7 /* Color+Extension.swift */,
-				EE92ECB32B8CFA8800FA05C7 /* Image+Extension.swift */,
-				EE92ECB92B8D050900FA05C7 /* MainButtonComponent.swift */,
+				EE92ECBC2B8D092200FA05C7 /* SharedComponents */,
+				EE92ECBB2B8D091800FA05C7 /* Extensions */,
 				EE92EC9B2B8CEFEE00FA05C7 /* Assets.xcassets */,
 				EE92EC9D2B8CEFEE00FA05C7 /* LaunchScreen.storyboard */,
 				EE92ECA02B8CEFEE00FA05C7 /* Info.plist */,
@@ -84,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				EE92ECA62B8CF22100FA05C7 /* OnboardingViewController.swift */,
+				EE92ECBF2B8D0E6700FA05C7 /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -95,6 +101,25 @@
 				EE92EC942B8CEFEC00FA05C7 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		EE92ECBB2B8D091800FA05C7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EE92ECB12B8CFA2900FA05C7 /* Color+Extension.swift */,
+				EE92ECB32B8CFA8800FA05C7 /* Image+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EE92ECBC2B8D092200FA05C7 /* SharedComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EE92ECB92B8D050900FA05C7 /* MainButtonComponent.swift */,
+				EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */,
+				EE92ECBD2B8D0E0F00FA05C7 /* CustomTextField.swift */,
+			);
+			path = SharedComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE92ECBE2B8D0E0F00FA05C7 /* CustomTextField.swift in Sources */,
 				EE92ECBA2B8D050900FA05C7 /* MainButtonComponent.swift in Sources */,
+				EE92ECC02B8D0E6700FA05C7 /* RegistrationViewController.swift in Sources */,
+				EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */,
 				EE92ECB42B8CFA8900FA05C7 /* Image+Extension.swift in Sources */,
 				EE92EC932B8CEFEC00FA05C7 /* AppDelegate.swift in Sources */,
 				EE92EC952B8CEFEC00FA05C7 /* SceneDelegate.swift in Sources */,
