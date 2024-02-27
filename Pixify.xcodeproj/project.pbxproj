@@ -28,6 +28,8 @@
 		EE92ECDA2B8DC9ED00FA05C7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD92B8DC9ED00FA05C7 /* NetworkManager.swift */; };
 		EE92ECDC2B8DCA0A00FA05C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */; };
 		EE92ECDF2B8DCA8300FA05C7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECDE2B8DCA8300FA05C7 /* Image.swift */; };
+		EE92ECE12B8DD56200FA05C7 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE02B8DD56200FA05C7 /* ImagesCollectionViewCell.swift */; };
+		EE92ECE42B8DDDDA00FA05C7 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE32B8DDDDA00FA05C7 /* ImageResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		EE92ECD92B8DC9ED00FA05C7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE92ECDE2B8DCA8300FA05C7 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		EE92ECE02B8DD56200FA05C7 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE92ECE32B8DDDDA00FA05C7 /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 		EE92ECD42B8DC23500FA05C7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EE92ECE22B8DD56600FA05C7 /* ImagesCollectionViewCell */,
 				EE92ECCF2B8D485600FA05C7 /* HomeViewController.swift */,
 				EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */,
 			);
@@ -195,9 +200,18 @@
 		EE92ECDD2B8DCA4200FA05C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE92ECE32B8DDDDA00FA05C7 /* ImageResponse.swift */,
 				EE92ECDE2B8DCA8300FA05C7 /* Image.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EE92ECE22B8DD56600FA05C7 /* ImagesCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EE92ECE02B8DD56200FA05C7 /* ImagesCollectionViewCell.swift */,
+			);
+			path = ImagesCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +286,7 @@
 			files = (
 				EE92ECBE2B8D0E0F00FA05C7 /* CustomTextField.swift in Sources */,
 				EE92ECDC2B8DCA0A00FA05C7 /* HomeViewModel.swift in Sources */,
+				EE92ECE42B8DDDDA00FA05C7 /* ImageResponse.swift in Sources */,
 				EE92ECBA2B8D050900FA05C7 /* MainButtonComponent.swift in Sources */,
 				EE92ECC02B8D0E6700FA05C7 /* RegistrationViewController.swift in Sources */,
 				EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */,
@@ -288,6 +303,7 @@
 				EE92ECCE2B8D475400FA05C7 /* UserRegistrationManager.swift in Sources */,
 				EE92ECB22B8CFA2900FA05C7 /* Color+Extension.swift in Sources */,
 				EE92ECD02B8D485600FA05C7 /* HomeViewController.swift in Sources */,
+				EE92ECE12B8DD56200FA05C7 /* ImagesCollectionViewCell.swift in Sources */,
 				EE92ECC92B8D42C600FA05C7 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
