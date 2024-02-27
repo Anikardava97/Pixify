@@ -16,7 +16,7 @@ struct Image: Decodable {
     let views, downloads, collections, likes, comments: Int
     let userID: Int
     let user: String
-    let userImageURL: String
+    let userImageURL: String?
     
     enum CodingKeys: String, CodingKey {
         case id, type, tags, largeImageURL, imageSize, views, downloads, collections, likes, comments

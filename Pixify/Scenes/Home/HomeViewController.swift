@@ -129,7 +129,8 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK:  Extension: UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let selectedImage = images[indexPath.row]
+        viewModel.navigateToRestaurantDetails(with: selectedImage)
     }
 }
 
@@ -167,7 +168,9 @@ extension HomeViewController: HomeViewModelDelegate {
     }
     
     func navigateToImageDetails(with image: Image) {
-        //
+        let imageDetailsViewController = DetailsViewController()
+        imageDetailsViewController.configure(with: image)
+        navigationController?.pushViewController(imageDetailsViewController, animated: true)
     }
 }
 
