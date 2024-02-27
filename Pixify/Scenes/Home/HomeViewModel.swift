@@ -5,7 +5,6 @@
 //  Created by Ani's Mac on 26.02.24.
 //
 
-
 protocol HomeViewModelDelegate: AnyObject {
     func fetchedImages(_ images: [Image])
     func showError(_ receivedError: Error)
@@ -14,7 +13,6 @@ protocol HomeViewModelDelegate: AnyObject {
 
 final class HomeViewModel {
     // MARK: - Properties
-    private let imagesURL = ApiManager.baseUrl + ApiManager.apiKey
     private var images: [Image]?
     weak var delegate: HomeViewModelDelegate?
     
@@ -23,7 +21,10 @@ final class HomeViewModel {
         fetchImages()
     }
     
-    private func fetchImages() {
+    func fetchImages(searchQuery: String? = nil) {
+        let searchParameters = ApiManager.searchParameters(for: searchQuery)
+        let imagesURL = ApiManager.baseUrl + ApiManager.apiKey + searchParameters
+        
         NetworkManager.shared.fetch(from: imagesURL) { [weak self] (result: Result<ImageResponse, NetworkError>) in
             switch result {
             case .success(let fetchedImages):

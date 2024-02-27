@@ -11,6 +11,7 @@ final class HomeViewController: UIViewController {
     // MARK: - Methods
     private let viewModel = HomeViewModel()
     private var images = [Image]()
+    private var searchController = UISearchController(searchResultsController: nil)
     
     private let mainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -23,15 +24,13 @@ final class HomeViewController: UIViewController {
     private let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Discover Inspiring Photos"
-        label.textColor = .customTextColor
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.textColor = .customTextColor.withAlphaComponent(0.6)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return label
     }()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 16
         layout.minimumLineSpacing = 16
         layout.sectionInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
@@ -39,7 +38,6 @@ final class HomeViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
@@ -59,6 +57,7 @@ final class HomeViewController: UIViewController {
     private func setup() {
         setupViewModelDelegate()
         setupBackground()
+        setupSearchController()
         setupCollectionView()
         setupSubviews()
         setupConstraints()
@@ -70,6 +69,14 @@ final class HomeViewController: UIViewController {
     
     private func setupBackground() {
         view.backgroundColor = .customBackgroundColor
+    }
+    
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Photos"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     private func setupCollectionView() {
@@ -86,11 +93,19 @@ final class HomeViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+
+// MARK: - Extension: UISearchResultsUpdating
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else { return }
+        viewModel.fetchImages(searchQuery: searchText)
     }
 }
 
@@ -114,9 +129,9 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK:  Extension: UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-        }
+        
     }
+}
 
 // MARK:  Extension: UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
@@ -156,6 +171,4 @@ extension HomeViewController: HomeViewModelDelegate {
     }
 }
 
-#Preview {
-    HomeViewController()
-}
+

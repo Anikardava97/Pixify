@@ -16,17 +16,16 @@ final class ImagesCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-  
+    
     private let authorNameLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
         label.textColor = .customTextColor.withAlphaComponent(0.6)
         label.numberOfLines = 1
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,7 +59,7 @@ final class ImagesCollectionViewCell: UICollectionViewCell {
             imageView.heightAnchor.constraint(equalToConstant: 200),
             
             authorNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 12),
-            authorNameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            authorNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
         ])
     }
     
@@ -80,9 +79,12 @@ final class ImagesCollectionViewCell: UICollectionViewCell {
     }
     
     private func setImage(from url: String) {
+        let currentURL = self.image?.largeImageURL
         NetworkManager.shared.downloadImage(from: url) { [weak self] image in
             DispatchQueue.main.async {
-                self?.imageView.image = image
+                if self?.image?.largeImageURL == currentURL {
+                    self?.imageView.image = image
+                }
             }
         }
     }
@@ -90,7 +92,7 @@ final class ImagesCollectionViewCell: UICollectionViewCell {
     // MARK: - Configuration
     func configure(with image: Image) {
         self.image = image
-        authorNameLabel.text = image.user
+        authorNameLabel.text = "@ \(image.user)"
         
         if let imageURL = image.largeImageURL {
             setImage(from: imageURL)
