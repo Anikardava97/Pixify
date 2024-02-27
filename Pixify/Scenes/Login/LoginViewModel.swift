@@ -10,13 +10,16 @@ import Foundation
 final class LoginViewModel {
     // MARK: - Methods
     func loginUser(email: String, password: String, completion: @escaping (Bool, String) -> Void) {
-        let storedEmail = UserDefaults.standard.string(forKey: "registeredEmail")
-        let storedPassword = UserDefaults.standard.string(forKey: "registeredPassword")
+        guard let registeredEmails = UserDefaults.standard.array(forKey: "registeredEmails") as? [String],
+              let storedPassword = UserDefaults.standard.string(forKey: "registeredPassword") else {
+            completion(false, "Email or password is incorrect")
+            return
+        }
         
-        if email == storedEmail && password == storedPassword {
-            completion(true, "Login successful.")
+        if registeredEmails.contains(email) && password == storedPassword {
+            completion(true, "Login successful")
         } else {
-            completion(false, "Email or password is not correct")
+            completion(false, "Email or password is incorrect")
         }
     }
     
