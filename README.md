@@ -3,7 +3,7 @@
 
 Pixify is a dynamic app designed to spark creativity by connecting users with a world of stunning photographs. Whether you're seeking inspiration, or just enjoy browsing beautiful images, Pixify offers a seamless and engaging experience.
 
-![App Screenshot](https://i.ibb.co/8X4S0F7/Pixify.png)
+![App Screenshot](https://i.ibb.co/FBd21QR/Pixify.png)
 
 ## Key Features
 - Onboarding Guide: A quick start for new users to effortlessly navigate through the app.
