@@ -7,15 +7,11 @@
 
 import Foundation
 
-struct ImageResponse: Codable {
-    let images: [Image]
-}
-
-struct Image: Codable {
+struct Image: Decodable {
     let id: Int
-    let type: TypeEnum
+    let type: String
     let tags: String
-    let largeImageURL: String
+    let largeImageURL: String?
     let imageSize: Int
     let views, downloads, collections, likes, comments: Int
     let userID: Int
@@ -29,7 +25,3 @@ struct Image: Codable {
     }
 }
 
-enum TypeEnum: String, Codable {
-    case illustration = "illustration"
-    case photo = "photo"
-}
