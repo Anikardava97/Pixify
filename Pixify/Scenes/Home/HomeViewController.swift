@@ -41,6 +41,14 @@ final class HomeViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var loadMoreButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Load More", for: .normal)
+        button.setTitleColor(.customAccentColor, for: .normal)
+        button.addTarget(self, action: #selector(loadMoreButtonDidTap), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +97,7 @@ final class HomeViewController: UIViewController {
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(headerLabel)
         mainStackView.addArrangedSubview(collectionView)
+        mainStackView.addArrangedSubview(loadMoreButton)
     }
     
     private func setupConstraints() {
@@ -99,13 +108,18 @@ final class HomeViewController: UIViewController {
             mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    // MARK: - Actions
+    @objc func loadMoreButtonDidTap() {
+        viewModel.loadMoreImages(searchQuery: searchController.searchBar.text)
+    }
 }
 
 // MARK: - Extension: UISearchResultsUpdating
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
-        viewModel.fetchImages(searchQuery: searchText)
+        viewModel.fetchImages(searchQuery: searchText, isNewSearch: true)
     }
 }
 
