@@ -44,7 +44,6 @@ final class IconLabelView: UIView {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
-        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),

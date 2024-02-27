@@ -44,9 +44,9 @@ final class HomeViewController: UIViewController {
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         hideBackButton()
         setup()
-        viewModel.viewDidLoad()
     }
     
     // MARK: - Private Methods
@@ -94,8 +94,8 @@ final class HomeViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
@@ -119,7 +119,6 @@ extension HomeViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ImagesCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
         let image = images[indexPath.row]
         cell.configure(with: image)
         return cell

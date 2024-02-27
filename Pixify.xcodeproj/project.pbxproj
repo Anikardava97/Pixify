@@ -188,9 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */,
+				EE92ECD72B8DC9BC00FA05C7 /* ImageCacheManager.swift */,
 				EE92ECD92B8DC9ED00FA05C7 /* NetworkManager.swift */,
 				EE92ECD52B8DC80E00FA05C7 /* ApiManager.swift */,
-				EE92ECD72B8DC9BC00FA05C7 /* ImageCacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";

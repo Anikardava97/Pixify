@@ -32,7 +32,6 @@ final class RegistrationViewController: UIViewController {
         let label = UILabel()
         label.text = "Sign Up"
         label.textColor = .customTextColor
-        label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         return label
     }()
@@ -75,6 +74,7 @@ final class RegistrationViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
+        
         textField.inputView = pickerView
         textField.delegate = self
         return textField
@@ -132,8 +132,8 @@ final class RegistrationViewController: UIViewController {
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
-            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
             passwordTextField.heightAnchor.constraint(equalToConstant: 44),
