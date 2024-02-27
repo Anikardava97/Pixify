@@ -13,10 +13,15 @@ final class HomeViewController: UIViewController {
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideBackButton()
         setup()
     }
     
     // MARK: - Private Methods
+    private func hideBackButton() {
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
     private func setup() {
         setupBackground()
         setupSubviews()
