@@ -26,15 +26,15 @@ final class LoginViewModel {
     func validateFields(email: String?, password: String?) -> [String: String] {
         var errors: [String: String] = [:]
         
-        if let email = email, email.isEmpty {
+        if let email, email.isEmpty {
             errors["email"] = "Email field cannot be empty"
-        } else if let email = email, !validateEmail(email) {
+        } else if let email, !validateEmail(email) {
             errors["email"] = "Invalid email format"
         }
         
-        if let password = password, password.isEmpty {
+        if let password, password.isEmpty {
             errors["password"] = "Password field cannot be empty"
-        } else if let password = password, !validatePassword(password) {
+        } else if let password, !validatePassword(password) {
             errors["password"] = "Password must contain 6-12 characters"
         }
         return errors
@@ -42,7 +42,7 @@ final class LoginViewModel {
     
     func validateEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
     }
     

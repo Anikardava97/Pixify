@@ -60,12 +60,12 @@ final class CustomTextField: UITextField {
         ])
         
         addSubview(errorLabel)
-         errorLabel.translatesAutoresizingMaskIntoConstraints = false
-         NSLayoutConstraint.activate([
-             errorLabel.topAnchor.constraint(equalTo: bottomAnchor, constant: 4),
-             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-         ])
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            errorLabel.topAnchor.constraint(equalTo: bottomAnchor, constant: 4),
+            errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
         
         tintColor = .customSecondaryColor
     }

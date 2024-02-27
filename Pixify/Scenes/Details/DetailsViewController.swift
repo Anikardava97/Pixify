@@ -95,11 +95,11 @@ final class DetailsViewController: UIViewController {
         setupSubviews()
         setupConstraints()
     }
-  
+    
     private func setupBackground() {
         view.backgroundColor = .customBackgroundColor
     }
-
+    
     private func setupSubviews() {
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(imageInfoStackView)
@@ -119,8 +119,8 @@ final class DetailsViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             imageView.heightAnchor.constraint(equalToConstant: 400)
         ])
@@ -137,9 +137,11 @@ final class DetailsViewController: UIViewController {
     // MARK: - Configure
     func configure(with image: Image) {
         viewModel = DetailsViewModel(image: image)
+        
         if let imageUrl = image.largeImageURL {
             setImage(from: imageUrl)
-        }   
+        }
+        
         tagsLabel.text = "# \(viewModel?.imageTag ?? "")"
         typeLabel.text = "Image Type: \(viewModel?.imageType ?? "")"
         sizeLabel.text = "Image Size: \(viewModel?.imageSize ?? 0)"

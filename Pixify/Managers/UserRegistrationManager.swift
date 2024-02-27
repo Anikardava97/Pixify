@@ -33,7 +33,6 @@ final class UserRegistrationManager {
             var registeredEmails = UserDefaults.standard.array(forKey: "registeredEmails") as? [String] ?? []
             registeredEmails.append(email)
             UserDefaults.standard.set(registeredEmails, forKey: "registeredEmails")
-            
             UserDefaults.standard.set(password, forKey: "registeredPassword")
             UserDefaults.standard.set(age, forKey: "registeredAge")
             
@@ -41,13 +40,6 @@ final class UserRegistrationManager {
                 completion(true, "User successfully registered.")
             }
         }
-    }
-    
-    func getRegisteredUser() -> (email: String?, password: String?, age: String?) {
-        let email = UserDefaults.standard.string(forKey: "registeredEmail")
-        let password = UserDefaults.standard.string(forKey: "registeredPassword")
-        let age = UserDefaults.standard.string(forKey: "registeredAge")
-        return (email, password, age)
     }
 }
 

@@ -31,7 +31,6 @@ final class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "Welcome back"
         label.textColor = .customTextColor
-        label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         return label
     }()
@@ -120,8 +119,8 @@ final class LoginViewController: UIViewController {
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
-            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
             passwordTextField.heightAnchor.constraint(equalToConstant: 44)
@@ -135,9 +134,9 @@ final class LoginViewController: UIViewController {
     }
     
     private func validateInputFields() -> Bool {
-        guard let email = emailTextField.text, let password = passwordTextField.text else {
-            return false
-        }
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text else { return false }
         
         let errors = viewModel.validateFields(email: email, password: password)
         
