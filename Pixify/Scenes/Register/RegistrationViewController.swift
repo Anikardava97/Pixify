@@ -95,6 +95,7 @@ final class RegistrationViewController: UIViewController {
     
     private lazy var loginButton: SecondaryButtonComponent = {
         let button = SecondaryButtonComponent(text: "Log In")
+        button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -197,12 +198,16 @@ final class RegistrationViewController: UIViewController {
             }
         }
     }
+    
+    @objc private func loginButtonDidTap() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - Extension: UITextFieldDelegate
 extension RegistrationViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return false
+        false
     }
 }
 

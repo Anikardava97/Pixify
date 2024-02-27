@@ -78,16 +78,22 @@ final class LoginViewController: UIViewController {
     
     private lazy var SignUpButton: SecondaryButtonComponent = {
         let button = SecondaryButtonComponent(text: "Sign Up")
+        button.addTarget(self, action: #selector(signUpButtonDidTap), for: .touchUpInside)
         return button
     }()
     
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideBackButton()
         setup()
     }
     
     // MARK: - Private Methods
+    private func hideBackButton() {
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
     private func setup() {
         setupBackground()
         setupSubviews()
@@ -179,8 +185,12 @@ final class LoginViewController: UIViewController {
             }
         }
     }
-}
-
-#Preview {
-    LoginViewController()
+    
+    @objc private func signUpButtonDidTap() {
+        let backButton = UIBarButtonItem()
+        backButton.title = "Log In"
+        navigationItem.backBarButtonItem = backButton
+        let signUpViewController = RegistrationViewController()
+        navigationController?.pushViewController(signUpViewController, animated: true)
+    }
 }

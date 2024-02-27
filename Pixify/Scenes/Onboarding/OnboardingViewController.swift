@@ -49,7 +49,8 @@ final class OnboardingViewController: UIViewController {
     }()
     
     private lazy var tryItNowButton: MainButtonComponent = {
-       let button = MainButtonComponent(text: "Try it now")
+        let button = MainButtonComponent(text: "Try it now")
+        button.addTarget(self, action: #selector(tryButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -97,5 +98,11 @@ final class OnboardingViewController: UIViewController {
                 translationX: 0,
                 y: -self.view.frame.height / 2.0)
         }, completion: nil)
+    }
+    
+    // MARK: - Actions
+    @objc func tryButtonDidTap() {
+        let loginViewController = LoginViewController()
+        navigationController?.pushViewController(loginViewController, animated: true)
     }
 }
