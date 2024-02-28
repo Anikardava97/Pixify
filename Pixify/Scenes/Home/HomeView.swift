@@ -18,14 +18,37 @@ struct HomeView: View {
     
     // MARK: - Body
     var body: some View {
-        NavigationStack {
-            verticalScrollView
-            loadMoreButton
-        }
-        .navigationBarBackButtonHidden()
+        content
     }
     
-    //MARK: - Images Grid
+    //MARK: - Content
+    private var content: some View {
+        NavigationView {
+            VStack {
+                headerView
+                verticalScrollView
+                loadMoreButton
+            }
+        }
+        .navigationBarBackButtonHidden()
+        .sheet(isPresented: $viewModel.isDetailsViewPresented) {
+            if let selectedImage = viewModel.selectedImage {
+                VStack() {
+                    Spacer().frame(height: 24)
+                    DetailsView(viewModel: DetailsViewModel(image: selectedImage))
+                }
+            }
+        }
+    }
+    
+    private var headerView: some View {
+        Text("Discover Inspiring Photos")
+            .font(.system(size: 20, weight: .bold))
+            .foregroundStyle(Color.customTextColor.opacity(0.6))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 20)
+    }
+    
     private var verticalScrollView: some View {
         ScrollView {
             imageGrid
@@ -35,18 +58,17 @@ struct HomeView: View {
     private var imageGrid: some View {
         LazyVGrid(columns: columns, spacing: spacing) {
             ForEach(viewModel.images) { image in
-                NavigationLink(value: image) {
+                Button(action: {
+                    viewModel.selectedImage = image
+                    viewModel.isDetailsViewPresented = true
+                }) {
                     ImagesGridView(image: image)
                 }
             }
         }
         .padding(.horizontal, 16)
-        .navigationDestination(for: Image.self) { selectedImage in
-            DetailsView(viewModel: DetailsViewModel(image: selectedImage))
-        }
     }
     
-    //MARK: - Load More Button
     private var loadMoreButton: some View {
         Button {
             //

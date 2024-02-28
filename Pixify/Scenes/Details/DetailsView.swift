@@ -10,13 +10,16 @@ import SwiftUI
 struct DetailsView: View {
     // MARK: - Properties
     @ObservedObject var viewModel: DetailsViewModel
-
+    
     // MARK: - Body
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            imageThumbnail
-            imageInfoView
-        }
+            VStack(alignment: .leading, spacing: 16) {
+                imageThumbnail
+                imageInfoFirstSectionStack
+                imageInfoSecondSectionStack
+                Spacer()
+            }
+            .padding(.horizontal, 20)
     }
     
     // MARK: - Content
@@ -24,25 +27,23 @@ struct DetailsView: View {
         AsyncImage(url: URL(string: viewModel.mainImage)) { imageThumbnail in
             imageThumbnail.resizable()
                 .scaledToFill()
-                .frame(height: 400)
+                .frame(width: UIScreen.main.bounds.width - 40, height: 400)
                 .cornerRadius(12)
                 .clipped()
         } placeholder: {
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color.customSecondaryColor.opacity(0.2))
-                .frame(width: 170, height: 200)
+                .frame(height: 400)
         }
-        .padding(.horizontal, 20)
     }
     
-    private var imageInfoView: some View {
-        VStack(alignment: .leading, spacing: 12) {
+    private var imageInfoFirstSectionStack: some View {
+        VStack(alignment: .leading, spacing: 8) {
             imageTagsView
             imageTypeView
             imageSizeView
             imageAuthorNameView
         }
-        .padding(.horizontal, 20)
     }
     
     private var imageTagsView: some View {
@@ -53,21 +54,43 @@ struct DetailsView: View {
     }
     
     private var imageTypeView: some View {
-        Text(viewModel.imageType)
+        Text("Image Type: \(viewModel.imageType)")
             .font(.system(size: 16))
             .foregroundStyle(Color.customTextColor)
     }
     
     private var imageSizeView: some View {
-        Text("\(viewModel.imageSize)")
+        Text("Image Size: \(viewModel.imageSize)")
             .font(.system(size: 16))
             .foregroundStyle(Color.customTextColor)
     }
     
     private var imageAuthorNameView: some View {
-        Text(viewModel.imageTag)
+        Text("Image Author: @\(viewModel.imageAuthorUsername)")
             .font(.system(size: 16))
             .foregroundStyle(Color.customTextColor)
+    }
+    
+    private var imageInfoSecondSectionStack: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            imageViewsAndDownloadsStack
+            imageLikesAndCommentsStack
+        }
+    }
+    
+    private var imageViewsAndDownloadsStack: some View {
+        HStack(spacing: 8) {
+            IconAndLabelView(iconName: "eye.fill", text: "\(viewModel.imageViewsCount)")
+            IconAndLabelView(iconName: "arrow.down.circle.fill", text: "\(viewModel.imageDownloadsCount)")
+            IconAndLabelView(iconName: "bookmark.fill", text: "\(viewModel.imageCollectionsCount)")
+        }
+    }
+    
+    private var imageLikesAndCommentsStack: some View {
+        HStack(spacing: 8) {
+            IconAndLabelView(iconName: "heart.fill", text: "\(viewModel.imageLikesCount)")
+            IconAndLabelView(iconName: "message.fill", text: "\(viewModel.imageCommentsCount)")
+        }
     }
 }
 
