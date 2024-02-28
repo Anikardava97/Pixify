@@ -10,6 +10,7 @@
 		EE1E10E42B8F1C1400B7C0D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E10E32B8F1C1400B7C0D8 /* HomeView.swift */; };
 		EE1E10E62B8F21AB00B7C0D8 /* ImagesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E10E52B8F21AB00B7C0D8 /* ImagesGridView.swift */; };
 		EE1E10EC2B8F50E700B7C0D8 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E10EB2B8F50E700B7C0D8 /* DetailsView.swift */; };
+		EE1E10F22B8F5C9A00B7C0D8 /* IconAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E10F12B8F5C9A00B7C0D8 /* IconAndLabelView.swift */; };
 		EE92EC932B8CEFEC00FA05C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92EC922B8CEFEC00FA05C7 /* AppDelegate.swift */; };
 		EE92EC952B8CEFEC00FA05C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92EC942B8CEFEC00FA05C7 /* SceneDelegate.swift */; };
 		EE92EC9C2B8CEFEE00FA05C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE92EC9B2B8CEFEE00FA05C7 /* Assets.xcassets */; };
@@ -31,15 +32,14 @@
 		EE92ECDC2B8DCA0A00FA05C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */; };
 		EE92ECDF2B8DCA8300FA05C7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECDE2B8DCA8300FA05C7 /* Image.swift */; };
 		EE92ECE42B8DDDDA00FA05C7 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE32B8DDDDA00FA05C7 /* ImageResponse.swift */; };
-		EE92ECE72B8DFEEF00FA05C7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE62B8DFEEF00FA05C7 /* DetailsViewController.swift */; };
 		EE92ECE92B8DFEF800FA05C7 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE82B8DFEF800FA05C7 /* DetailsViewModel.swift */; };
-		EE92ECEB2B8E2BB800FA05C7 /* IconLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECEA2B8E2BB800FA05C7 /* IconLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE1E10E32B8F1C1400B7C0D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EE1E10E52B8F21AB00B7C0D8 /* ImagesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesGridView.swift; sourceTree = "<group>"; };
 		EE1E10EB2B8F50E700B7C0D8 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		EE1E10F12B8F5C9A00B7C0D8 /* IconAndLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAndLabelView.swift; sourceTree = "<group>"; };
 		EE92EC8F2B8CEFEC00FA05C7 /* Pixify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pixify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE92EC922B8CEFEC00FA05C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE92EC942B8CEFEC00FA05C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,9 +63,7 @@
 		EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE92ECDE2B8DCA8300FA05C7 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		EE92ECE32B8DDDDA00FA05C7 /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
-		EE92ECE62B8DFEEF00FA05C7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		EE92ECE82B8DFEF800FA05C7 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
-		EE92ECEA2B8E2BB800FA05C7 /* IconLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +77,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE1E10F32B8F61D400B7C0D8 /* Uikit Components */ = {
+			isa = PBXGroup;
+			children = (
+				EE92ECB92B8D050900FA05C7 /* MainButtonComponent.swift */,
+				EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */,
+				EE92ECBD2B8D0E0F00FA05C7 /* CustomTextField.swift */,
+			);
+			path = "Uikit Components";
+			sourceTree = "<group>";
+		};
+		EE1E10F42B8F61DC00B7C0D8 /* SwiftUIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				EE1E10F12B8F5C9A00B7C0D8 /* IconAndLabelView.swift */,
+			);
+			path = SwiftUIComponent;
+			sourceTree = "<group>";
+		};
 		EE92EC862B8CEFEC00FA05C7 = {
 			isa = PBXGroup;
 			children = (
@@ -151,10 +167,8 @@
 		EE92ECBC2B8D092200FA05C7 /* SharedComponents */ = {
 			isa = PBXGroup;
 			children = (
-				EE92ECB92B8D050900FA05C7 /* MainButtonComponent.swift */,
-				EE92ECC12B8D217E00FA05C7 /* SecondaryButtonComponent.swift */,
-				EE92ECBD2B8D0E0F00FA05C7 /* CustomTextField.swift */,
-				EE92ECEA2B8E2BB800FA05C7 /* IconLabelView.swift */,
+				EE1E10F32B8F61D400B7C0D8 /* Uikit Components */,
+				EE1E10F42B8F61DC00B7C0D8 /* SwiftUIComponent */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
@@ -219,9 +233,8 @@
 		EE92ECE52B8DFECE00FA05C7 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				EE92ECE62B8DFEEF00FA05C7 /* DetailsViewController.swift */,
-				EE92ECE82B8DFEF800FA05C7 /* DetailsViewModel.swift */,
 				EE1E10EB2B8F50E700B7C0D8 /* DetailsView.swift */,
+				EE92ECE82B8DFEF800FA05C7 /* DetailsViewModel.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -298,10 +311,8 @@
 			files = (
 				EE92ECBE2B8D0E0F00FA05C7 /* CustomTextField.swift in Sources */,
 				EE92ECDC2B8DCA0A00FA05C7 /* HomeViewModel.swift in Sources */,
-				EE92ECEB2B8E2BB800FA05C7 /* IconLabelView.swift in Sources */,
 				EE1E10E42B8F1C1400B7C0D8 /* HomeView.swift in Sources */,
 				EE92ECE42B8DDDDA00FA05C7 /* ImageResponse.swift in Sources */,
-				EE92ECE72B8DFEEF00FA05C7 /* DetailsViewController.swift in Sources */,
 				EE92ECBA2B8D050900FA05C7 /* MainButtonComponent.swift in Sources */,
 				EE92ECC02B8D0E6700FA05C7 /* RegistrationViewController.swift in Sources */,
 				EE1E10E62B8F21AB00B7C0D8 /* ImagesGridView.swift in Sources */,
@@ -312,6 +323,7 @@
 				EE92ECC52B8D29B200FA05C7 /* RegistrationViewModel.swift in Sources */,
 				EE92ECE92B8DFEF800FA05C7 /* DetailsViewModel.swift in Sources */,
 				EE92ECD32B8D4D1200FA05C7 /* LoginViewModel.swift in Sources */,
+				EE1E10F22B8F5C9A00B7C0D8 /* IconAndLabelView.swift in Sources */,
 				EE92ECD62B8DC80E00FA05C7 /* ApiManager.swift in Sources */,
 				EE92EC932B8CEFEC00FA05C7 /* AppDelegate.swift in Sources */,
 				EE92ECDA2B8DC9ED00FA05C7 /* NetworkManager.swift in Sources */,

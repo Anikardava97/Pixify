@@ -13,6 +13,9 @@ final class HomeViewModel: ObservableObject {
     @Published private var error: String?
     @Published private var imagesURL = ApiManager.baseUrl + ApiManager.apiKey
     
+    @Published var selectedImage: Image?
+    @Published var isDetailsViewPresented = false
+    
     // MARK: - Init
     init() {
         fetchImages()
