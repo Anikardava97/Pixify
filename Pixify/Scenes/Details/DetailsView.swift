@@ -13,13 +13,13 @@ struct DetailsView: View {
     
     // MARK: - Body
     var body: some View {
-            VStack(alignment: .leading, spacing: 16) {
-                imageThumbnail
-                imageInfoFirstSectionStack
-                imageInfoSecondSectionStack
-                Spacer()
-            }
-            .padding(.horizontal, 20)
+        VStack(alignment: .leading, spacing: 16) {
+            imageThumbnail
+            imageInfoFirstSectionStack
+            imageInfoSecondSectionStack
+            Spacer()
+        }
+        .padding(.horizontal, 20)
     }
     
     // MARK: - Content

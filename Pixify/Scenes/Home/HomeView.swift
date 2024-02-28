@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     // MARK: - Properties
     @StateObject var viewModel = HomeViewModel()
+    @State private var searchText: String = ""
+    
     private let spacing: CGFloat = 16
     private var columns = [
         GridItem(.flexible()),
@@ -26,6 +28,7 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 headerView
+                searchBar
                 verticalScrollView
                 loadMoreButton
             }
@@ -47,6 +50,17 @@ struct HomeView: View {
             .foregroundStyle(Color.customTextColor.opacity(0.6))
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
+    }
+    
+    private var searchBar: some View {
+        TextField("Search Photos", text: $searchText)
+            .padding(8)
+            .background(Color(.systemGray6))
+            .cornerRadius(12)
+            .padding(.horizontal, 16)
+            .onChange(of: searchText) { newValue in
+                viewModel.fetchImages(searchQuery: newValue, isNewSearch: true)
+            }
     }
     
     private var verticalScrollView: some View {
@@ -71,15 +85,11 @@ struct HomeView: View {
     
     private var loadMoreButton: some View {
         Button {
-            //
+            viewModel.fetchImages(searchQuery: searchText)
         } label: {
             Text("Load More")
                 .foregroundStyle(Color.customAccentColor)
                 .fontWeight(.medium)
         }
     }
-}
-
-#Preview {
-    HomeView()
 }
