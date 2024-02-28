@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DetailsViewModel {
+final class DetailsViewModel: ObservableObject {
     // MARK: - Properties
     var image: Image?
     

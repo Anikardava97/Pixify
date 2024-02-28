@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Image: Decodable {
+struct Image: Decodable, Identifiable, Hashable {
     let id: Int
     let type: String
     let tags: String

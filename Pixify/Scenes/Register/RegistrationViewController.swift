@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class RegistrationViewController: UIViewController {
     // MARK: - Methods
@@ -188,8 +189,9 @@ final class RegistrationViewController: UIViewController {
         ) { [weak self] success, message in
             DispatchQueue.main.async {
                 if success {
-                    let homeViewController = HomeViewController()
-                    self?.navigationController?.pushViewController(homeViewController, animated: true)
+                    let homeView = HomeView()
+                    let hostingController = UIHostingController(rootView: homeView)
+                    self?.navigationController?.pushViewController(hostingController, animated: true)
                 } else if message == "Email already exists" {
                     self?.showAlert(title: "Registration Failed", message: "The email address is already in use. Please try another email.")
                 } else {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE1E10E42B8F1C1400B7C0D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E10E32B8F1C1400B7C0D8 /* HomeView.swift */; };
+		EE1E10E62B8F21AB00B7C0D8 /* ImagesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E10E52B8F21AB00B7C0D8 /* ImagesGridView.swift */; };
+		EE1E10EC2B8F50E700B7C0D8 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E10EB2B8F50E700B7C0D8 /* DetailsView.swift */; };
 		EE92EC932B8CEFEC00FA05C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92EC922B8CEFEC00FA05C7 /* AppDelegate.swift */; };
 		EE92EC952B8CEFEC00FA05C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92EC942B8CEFEC00FA05C7 /* SceneDelegate.swift */; };
 		EE92EC9C2B8CEFEE00FA05C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE92EC9B2B8CEFEE00FA05C7 /* Assets.xcassets */; };
@@ -21,14 +24,12 @@
 		EE92ECC52B8D29B200FA05C7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECC42B8D29B200FA05C7 /* RegistrationViewModel.swift */; };
 		EE92ECC92B8D42C600FA05C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECC82B8D42C600FA05C7 /* LoginViewController.swift */; };
 		EE92ECCE2B8D475400FA05C7 /* UserRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */; };
-		EE92ECD02B8D485600FA05C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECCF2B8D485600FA05C7 /* HomeViewController.swift */; };
 		EE92ECD32B8D4D1200FA05C7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD22B8D4D1200FA05C7 /* LoginViewModel.swift */; };
 		EE92ECD62B8DC80E00FA05C7 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD52B8DC80E00FA05C7 /* ApiManager.swift */; };
 		EE92ECD82B8DC9BC00FA05C7 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD72B8DC9BC00FA05C7 /* ImageCacheManager.swift */; };
 		EE92ECDA2B8DC9ED00FA05C7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD92B8DC9ED00FA05C7 /* NetworkManager.swift */; };
 		EE92ECDC2B8DCA0A00FA05C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */; };
 		EE92ECDF2B8DCA8300FA05C7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECDE2B8DCA8300FA05C7 /* Image.swift */; };
-		EE92ECE12B8DD56200FA05C7 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE02B8DD56200FA05C7 /* ImagesCollectionViewCell.swift */; };
 		EE92ECE42B8DDDDA00FA05C7 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE32B8DDDDA00FA05C7 /* ImageResponse.swift */; };
 		EE92ECE72B8DFEEF00FA05C7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE62B8DFEEF00FA05C7 /* DetailsViewController.swift */; };
 		EE92ECE92B8DFEF800FA05C7 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECE82B8DFEF800FA05C7 /* DetailsViewModel.swift */; };
@@ -36,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE1E10E32B8F1C1400B7C0D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EE1E10E52B8F21AB00B7C0D8 /* ImagesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesGridView.swift; sourceTree = "<group>"; };
+		EE1E10EB2B8F50E700B7C0D8 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		EE92EC8F2B8CEFEC00FA05C7 /* Pixify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pixify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE92EC922B8CEFEC00FA05C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE92EC942B8CEFEC00FA05C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,14 +56,12 @@
 		EE92ECC42B8D29B200FA05C7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		EE92ECC82B8D42C600FA05C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationManager.swift; sourceTree = "<group>"; };
-		EE92ECCF2B8D485600FA05C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EE92ECD22B8D4D1200FA05C7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EE92ECD52B8DC80E00FA05C7 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		EE92ECD72B8DC9BC00FA05C7 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		EE92ECD92B8DC9ED00FA05C7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE92ECDE2B8DCA8300FA05C7 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		EE92ECE02B8DD56200FA05C7 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE92ECE32B8DDDDA00FA05C7 /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 		EE92ECE62B8DFEEF00FA05C7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		EE92ECE82B8DFEF800FA05C7 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
@@ -198,9 +200,9 @@
 		EE92ECD42B8DC23500FA05C7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				EE92ECE22B8DD56600FA05C7 /* ImagesCollectionViewCell */,
-				EE92ECCF2B8D485600FA05C7 /* HomeViewController.swift */,
+				EE1E10E32B8F1C1400B7C0D8 /* HomeView.swift */,
 				EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */,
+				EE1E10E52B8F21AB00B7C0D8 /* ImagesGridView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -214,19 +216,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		EE92ECE22B8DD56600FA05C7 /* ImagesCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				EE92ECE02B8DD56200FA05C7 /* ImagesCollectionViewCell.swift */,
-			);
-			path = ImagesCollectionViewCell;
-			sourceTree = "<group>";
-		};
 		EE92ECE52B8DFECE00FA05C7 /* Details */ = {
 			isa = PBXGroup;
 			children = (
 				EE92ECE62B8DFEEF00FA05C7 /* DetailsViewController.swift */,
 				EE92ECE82B8DFEF800FA05C7 /* DetailsViewModel.swift */,
+				EE1E10EB2B8F50E700B7C0D8 /* DetailsView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -304,12 +299,15 @@
 				EE92ECBE2B8D0E0F00FA05C7 /* CustomTextField.swift in Sources */,
 				EE92ECDC2B8DCA0A00FA05C7 /* HomeViewModel.swift in Sources */,
 				EE92ECEB2B8E2BB800FA05C7 /* IconLabelView.swift in Sources */,
+				EE1E10E42B8F1C1400B7C0D8 /* HomeView.swift in Sources */,
 				EE92ECE42B8DDDDA00FA05C7 /* ImageResponse.swift in Sources */,
 				EE92ECE72B8DFEEF00FA05C7 /* DetailsViewController.swift in Sources */,
 				EE92ECBA2B8D050900FA05C7 /* MainButtonComponent.swift in Sources */,
 				EE92ECC02B8D0E6700FA05C7 /* RegistrationViewController.swift in Sources */,
+				EE1E10E62B8F21AB00B7C0D8 /* ImagesGridView.swift in Sources */,
 				EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */,
 				EE92ECD82B8DC9BC00FA05C7 /* ImageCacheManager.swift in Sources */,
+				EE1E10EC2B8F50E700B7C0D8 /* DetailsView.swift in Sources */,
 				EE92ECB42B8CFA8900FA05C7 /* Image+Extension.swift in Sources */,
 				EE92ECC52B8D29B200FA05C7 /* RegistrationViewModel.swift in Sources */,
 				EE92ECE92B8DFEF800FA05C7 /* DetailsViewModel.swift in Sources */,
@@ -322,8 +320,6 @@
 				EE92ECA72B8CF22100FA05C7 /* OnboardingViewController.swift in Sources */,
 				EE92ECCE2B8D475400FA05C7 /* UserRegistrationManager.swift in Sources */,
 				EE92ECB22B8CFA2900FA05C7 /* Color+Extension.swift in Sources */,
-				EE92ECD02B8D485600FA05C7 /* HomeViewController.swift in Sources */,
-				EE92ECE12B8DD56200FA05C7 /* ImagesCollectionViewCell.swift in Sources */,
 				EE92ECC92B8D42C600FA05C7 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
