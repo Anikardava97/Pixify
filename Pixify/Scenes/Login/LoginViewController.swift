@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class LoginViewController: UIViewController {
     // MARK: - Methods
@@ -176,8 +177,9 @@ final class LoginViewController: UIViewController {
         viewModel.loginUser(email: email, password: password) { [weak self] success, message in
             DispatchQueue.main.async {
                 if success {
-                    let homeViewController = HomeViewController()
-                    self?.navigationController?.pushViewController(homeViewController, animated: true)
+                    let homeView = HomeView()
+                    let hostingController = UIHostingController(rootView: homeView)
+                    self?.navigationController?.pushViewController(hostingController, animated: true)
                 } else {
                     self?.showAlert(message: message)
                 }

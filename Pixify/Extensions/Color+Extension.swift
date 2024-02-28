@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UIColor {
     static let customAccentColor = UIColor(red: 69/255, green: 108/255, blue: 92/255, alpha: 1)
@@ -13,3 +14,12 @@ extension UIColor {
     static let customBackgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
     static let customTextColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.8)
 }
+
+extension Color {
+    static let customAccentColor = Color(UIColor.customAccentColor)
+    static let customSecondaryColor = Color(UIColor.customSecondaryColor)
+    static let customBackgroundColor = Color(UIColor.customBackgroundColor)
+    static let customTextColor = Color(UIColor.customTextColor)
+}
+
+
