@@ -27,7 +27,6 @@
 		EE92ECCE2B8D475400FA05C7 /* UserRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */; };
 		EE92ECD32B8D4D1200FA05C7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD22B8D4D1200FA05C7 /* LoginViewModel.swift */; };
 		EE92ECD62B8DC80E00FA05C7 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD52B8DC80E00FA05C7 /* ApiManager.swift */; };
-		EE92ECD82B8DC9BC00FA05C7 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD72B8DC9BC00FA05C7 /* ImageCacheManager.swift */; };
 		EE92ECDA2B8DC9ED00FA05C7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECD92B8DC9ED00FA05C7 /* NetworkManager.swift */; };
 		EE92ECDC2B8DCA0A00FA05C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */; };
 		EE92ECDF2B8DCA8300FA05C7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92ECDE2B8DCA8300FA05C7 /* Image.swift */; };
@@ -58,7 +57,6 @@
 		EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationManager.swift; sourceTree = "<group>"; };
 		EE92ECD22B8D4D1200FA05C7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EE92ECD52B8DC80E00FA05C7 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		EE92ECD72B8DC9BC00FA05C7 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		EE92ECD92B8DC9ED00FA05C7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE92ECDB2B8DCA0A00FA05C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE92ECDE2B8DCA8300FA05C7 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				EE92ECCD2B8D475400FA05C7 /* UserRegistrationManager.swift */,
-				EE92ECD72B8DC9BC00FA05C7 /* ImageCacheManager.swift */,
 				EE92ECD92B8DC9ED00FA05C7 /* NetworkManager.swift */,
 				EE92ECD52B8DC80E00FA05C7 /* ApiManager.swift */,
 			);
@@ -317,7 +314,6 @@
 				EE92ECC02B8D0E6700FA05C7 /* RegistrationViewController.swift in Sources */,
 				EE1E10E62B8F21AB00B7C0D8 /* ImagesGridView.swift in Sources */,
 				EE92ECC22B8D217E00FA05C7 /* SecondaryButtonComponent.swift in Sources */,
-				EE92ECD82B8DC9BC00FA05C7 /* ImageCacheManager.swift in Sources */,
 				EE1E10EC2B8F50E700B7C0D8 /* DetailsView.swift in Sources */,
 				EE92ECB42B8CFA8900FA05C7 /* Image+Extension.swift in Sources */,
 				EE92ECC52B8D29B200FA05C7 /* RegistrationViewModel.swift in Sources */,

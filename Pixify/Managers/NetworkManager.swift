@@ -47,27 +47,4 @@ final class NetworkManager {
             } catch { completion(.failure(.decodingError)) }
         }.resume()
     }
-    
-    // MARK: - Download Image
-    func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
-        if let cachedImage = ImageCacheManager.shared.getImage(for: urlString) {
-            completion(cachedImage)
-            return
-        }
-        
-        guard let url = URL(string: urlString) else {
-            completion(nil)
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let downloadedImage = UIImage(data: data) else {
-                completion(nil)
-                return
-            }
-            ImageCacheManager.shared.setImage(downloadedImage, for: urlString)
-            completion(downloadedImage)
-        }
-        task.resume()
-    }
 }
